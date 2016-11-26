@@ -6,8 +6,8 @@ Requirements:
 Python 3
 
 Tested on Systems:
-Windows 8.1
-Windows 8
+Windows 8.1,
+Windows 8,
 Windows 10
 
 Tested Python Versions:
