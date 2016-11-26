@@ -1,0 +1,2 @@
+start Main.pyw
+exit
