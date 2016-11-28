@@ -56,6 +56,7 @@ class myProg_tk(Tk):
     def pauseSong (self):
         if (self.pause == True):
             mixer.music.unpause()
+            self.pause = False
         else:
             mixer.music.pause()
             self.pause = True
