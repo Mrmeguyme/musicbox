@@ -73,7 +73,8 @@ mixer.init()
 app = myProg_tk(None)
 app.title('Music Box')
 while (app.exists):
-    Tk.mainloop(app)
+    Tk.update_idletasks(app)
+    Tk.update(app)
     
 
 mixer.music.stop()
