@@ -7,6 +7,7 @@ class myProg_tk(Tk):
     def __init__(self, parent):
         Tk.__init__(self, parent)
         self.parent = parent
+        self.exists = True
         self.initialize()
 
     def initialize(self):
@@ -56,7 +57,6 @@ class myProg_tk(Tk):
     def pauseSong (self):
         if (self.pause == True):
             mixer.music.unpause()
-            self.pause = False
         else:
             mixer.music.pause()
             self.pause = True
@@ -64,6 +64,7 @@ class myProg_tk(Tk):
     def closeSafely(self):
         mixer.music.stop()
         Tk.destroy(self)
+        self.exists = False
 
 def onClose(whileLooping):
     whileLooping = False
@@ -71,9 +72,9 @@ def onClose(whileLooping):
 mixer.init()
 app = myProg_tk(None)
 app.title('Music Box')
-while (True):
-    Tk.update_idletasks(app)
-    Tk.update(app)
+while (app.exists):
+    Tk.mainloop(app)
+    
 
 mixer.music.stop()
-mixer.music.quit()
+mixer.quit()
