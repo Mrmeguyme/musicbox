@@ -15,7 +15,7 @@ class myProg_tk(Tk):
         self.pause = False
 
         self.root.bind('<Escape>', lambda e: self.closeSafely())
-        self.root.protocol("WM_DELETE_WINDOW", self.closeSafely())
+        self.root.protocol("WM_DELETE_WINDOW", self.iconify())
         
         self.grid()
         self.label = Label(self, text = 'Queue Song (Hit Enter)')
